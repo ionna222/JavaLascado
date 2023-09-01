@@ -7,7 +7,6 @@ public class LeiaNum {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 
-		//Input
 		System.out.println("Digite o primeiro número");
 		int varA = scn.nextInt();
 		
@@ -17,6 +16,7 @@ public class LeiaNum {
 		System.out.println("Digite o terceiro número");
 		int varC = scn.nextInt();
 		
+
 		//Maior valor
 		if (varA > varB && varC < varA) {
 			System.out.println("O maior valor é o primeiro: " + varA);
@@ -44,28 +44,22 @@ public class LeiaNum {
 		System.out.println("A média dos valores é de: " + (varA + varB + varC) / 3);
 		
 		//Impares e Pares
-		if (varA % 2 == 0) {
-			System.out.println("O primeiro número é par");
-		}
-		else {
-			System.out.println("O primeiro número é ímpar");
-		}
+		int imp = 0;
+		int par = 0;
 		
-		if (varB % 2 == 0) {
-			System.out.println("O segundo número é par");
-		}
-		else {
-			System.out.println("O segundo número é ímpar");
-		}
+		if (varA % 2 == 0) { ++par; }
+		else { ++imp; }
 		
-		if (varC % 2 == 0) {
-			System.out.println("O terceiro número é par");
-		}
-		else {
-			System.out.println("O terceiro número é ímpar");
-		}
+		if (varB % 2 == 0) { ++par; }
+		else { ++imp; }
 		
-		//Contagem
+		if (varC % 2 == 0) { ++par; }
+		else { ++imp; }
+		
+		System.out.println("O número de números pares é de " + par);
+		System.out.println("O número de números ímpares é de " + imp);
+		
+		//Contagem PosNeg
 		int pos = 0;
 		int neu = 0;
 		int neg = 0;
@@ -78,9 +72,11 @@ public class LeiaNum {
 		else if (varB == 0) { ++neu; }
 		else if (varC == 0) { ++neu; }
 		
-		if (varA > 0) { ++neg; }
-		else if (varB > 0) { ++neg; }
-		else if (varC > 0) { ++neg; }
+		if (varA < 0) { ++neg; }
+		else if (varB < 0) { ++neg; }
+		else if (varC < 0) { ++neg; }
+		
+		
 		
 		System.out.println("São " + pos + " números positivos");
 		System.out.println("São " + neu + " números neutros");
